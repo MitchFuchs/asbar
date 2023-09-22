@@ -1,0 +1,9 @@
+# DLC default configuration
+dlc:
+  displayiters: 500
+  saveiters: 500
+  maxiters: 15000
+
+# MM default configuration
+mm:
+  ngpus_per_node: 2
