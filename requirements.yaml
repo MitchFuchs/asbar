@@ -6,8 +6,6 @@ channels:
 dependencies:
   - python=3.8
   - pip
-  - jupyter
-  - nb_conda
   - ffmpeg
   - pip:
     - deeplabcut==2.2.3
