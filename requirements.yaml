@@ -1,4 +1,4 @@
-name: gasbar
+name: asbar
 channels:
   - conda-forge
   - pytorch
