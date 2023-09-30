@@ -139,7 +139,7 @@ Follow the same structure as below:
 
 If you use this material, please cite it as below.
 
-Michael Fuchs, Emilie Genty, Klaus Zuberbühler, Paul Cotofrie. “ASBAR: an Animal Skeleton-Based Action Recognition framework. Recognizing great ape behaviors in the wild using pose estimation with domain adaptation”. In: bioRxiv (2023). doi: 10.1101/2023.09.24.559236. eprint: https://www.biorxiv.org/content/early/2023/09/25/2023.09.24.559236.full.pdf. 
+Michael Fuchs, Emilie Genty, Klaus Zuberbühler, Paul Cotofrei. “ASBAR: an Animal Skeleton-Based Action Recognition framework. Recognizing great ape behaviors in the wild using pose estimation with domain adaptation”. In: bioRxiv (2023). doi: 10.1101/2023.09.24.559236. eprint: https://www.biorxiv.org/content/early/2023/09/25/2023.09.24.559236.full.pdf. 
 
 ```BibTeX
 @article {asbar_Fuchs2023,
