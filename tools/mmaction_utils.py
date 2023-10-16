@@ -58,22 +58,19 @@ class MMA(DLC):
     def create_skeleton_data(self, split, label_id, label, activity):
         name, ape_id, start, stop, bboxes = activity
         sample_interval, sequence_length, activity_duration_threshold = self.mm_cfg.values()
-        # shape = (404, 720)
         full_pickle = self.get_full_pickle(name)
-        print(full_pickle)
         full_pk = os.path.join(self.dest_folder, full_pickle)
         with open(full_pk, 'rb') as fp:
             kp = pickle.load(fp)
 
         total_frames = stop - start + 1
-        print(total_frames)
 
         if total_frames >= activity_duration_threshold:
             coords = np.zeros((1, total_frames, self.n_keypoints, 2))  # shape 1xTxKx2
             scores = np.zeros((1, total_frames, self.n_keypoints))  # shape 1xTxK
             num_frames_in_dlc = max(len(kp.keys()) - 1, 1)
             add_n_zero = int(np.ceil(np.log10(num_frames_in_dlc)))
-            keys = ['frame' + str(x).zfill(add_n_zero) for x in range(start, stop + 1)]
+            keys = ['frame' + str(x).zfill(add_n_zero) for x in range(start - 1, stop)]
 
             for i, key in enumerate(keys):
                 if key in kp.keys():
@@ -107,19 +104,14 @@ class MMA(DLC):
             sequence = 0
             ext, shape = self.get_meta(name, full_pk)
 
-            # for i in range(1, total_frames, sample_interval):
-            #     if stop - start - i > sequence_length:
-            for i in range(start, stop, sample_interval):
-                if stop - i + 1 >= sequence_length:
-                    print('passed')
+            for i in range(0, total_frames, sample_interval):
+                if total_frames - i >= sequence_length:
                     filename = '_'.join(
-                        [name, str(label_id), str(sequence), str(i), str(i + sequence_length - 1)])
+                        [name, str(label_id), str(sequence), str(i), str(i + sequence_length)])
 
                     out = {}
-                    print('coords.shape', coords.shape)
-                    out['keypoint'] = coords[:, i-1:i + sequence_length, :, :]
-                    print('out[keypoint].shape', out['keypoint'].shape)
-                    out['keypoint_score'] = scores[:, i-1:i + sequence_length, :]
+                    out['keypoint'] = coords[:, i:i + sequence_length, :, :]
+                    out['keypoint_score'] = scores[:, i:i + sequence_length, :]
                     out['frame_dir'] = filename + ext
                     out['label'] = label_id
                     out['img_shape'] = shape
@@ -131,8 +123,8 @@ class MMA(DLC):
                     sequence += 1
                     with open(filename, 'wb') as f:
                         pickle.dump([out], f)
-                else:
-                    print('did not pass', stop - i + 1)
+                # else:
+                #     print('did not pass', stop - i + 1)
 
     def get_meta(self, name, full_pk):
         ext = [os.path.join(self.vid_dir, x) for x in self.all_videos if x[:len(name)] == name][0][-4:]
