@@ -1,10 +1,10 @@
 # ASBAR: an Animal Skeleton-Based Action Recognition framework
 
 ## Examples - walking, sitting, standing, running
-<img src="https://github.com/MitchFuchs/asbar/assets/73831423/a95128ca-41c5-40c2-99bb-0eaaf04b0b5f.type" width="500" height="250">
-<img src="https://github.com/MitchFuchs/asbar/assets/73831423/10316b38-0796-4c55-ab57-e0ff6bcfebb3.type" width="500" height="250">
-<img src="https://github.com/MitchFuchs/asbar/assets/73831423/d5c46f70-4802-4dfb-b6d0-4f1898d3c990.type" width="500" height="250">
-<img src="https://github.com/MitchFuchs/asbar/assets/73831423/b3472629-36f4-46d1-8202-e2f4f3690575.type" width="500" height="250">
+<img src="https://github.com/MitchFuchs/asbar/assets/73831423/a95128ca-41c5-40c2-99bb-0eaaf04b0b5f.type" width="400" height="200">
+<img src="https://github.com/MitchFuchs/asbar/assets/73831423/10316b38-0796-4c55-ab57-e0ff6bcfebb3.type" width="400" height="200">
+<img src="https://github.com/MitchFuchs/asbar/assets/73831423/d5c46f70-4802-4dfb-b6d0-4f1898d3c990.type" width="400" height="200">
+<img src="https://github.com/MitchFuchs/asbar/assets/73831423/b3472629-36f4-46d1-8202-e2f4f3690575.type" width="400" height="200">
 
 
 ## Installation
