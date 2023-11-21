@@ -27,6 +27,9 @@ select_task () {
 }
 
 select_project () {
+  if [ ! -d "./models/deeplabcut" ]; then
+    mkdir ./models/deeplabcut
+  fi
   eval ALL_PROJECTS=( $(ls ./models/deeplabcut/))
   args_projects+=("NEW" "Create a new deeplabcut project")
   for item in "${ALL_PROJECTS[@]}"
