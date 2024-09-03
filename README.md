@@ -1,5 +1,32 @@
 # ASBAR: an Animal Skeleton-Based Action Recognition framework
 
+## Paper
+
+### Abstract
+To date, the investigation and classification of animal behaviors have mostly relied on direct
+human observations or video recordings with posthoc analysis, which can be labor-intensive,
+time-consuming, and prone to human bias. Recent advances in machine learning for
+computer vision tasks, such as pose estimation and action recognition, thus have the
+potential to significantly improve and deepen our understanding of animal behavior.
+However, despite the increased availability of open-source toolboxes and large-scale datasets
+for animal pose estimation, their practical relevance for behavior recognition remains underexplored. In this paper, we propose an innovative framework, ASBAR, for Animal SkeletonBased Action Recognition, which fully integrates animal pose estimation and behavior
+recognition. We demonstrate the use of this framework in a particularly challenging task: the
+classification of great ape natural behaviors in the wild. First, we built a robust pose
+estimator model leveraging OpenMonkeyChallenge, one of the largest available open-source
+primate pose datasets, through a benchmark analysis on several CNN models from
+DeepLabCut, integrated into our framework. Second, we extracted the great ape’s skeletal
+motion from the PanAf dataset, a large collection of in-the-wild videos of gorillas and
+chimpanzees annotated for natural behaviors, which we used to train and evaluate
+PoseConv3D from MMaction2, a second deep learning model fully integrated into our
+framework. We hereby classify behaviors into nine distinct categories and achieve a Top 1
+accuracy of 74.98%, comparable to previous studies using video-based methods, while
+reducing the model’s input size by a factor of around 20. Additionally, we provide an opensource terminal-based GUI that integrates our full pipeline and release a set of 5,440 keypoint
+annotations to facilitate the replication of our results on other species and/or behaviors.
+
+View online [here](https://elifesciences.org/reviewed-preprints/97962)
+
+Download [here](https://github.com/elifesciences/enhanced-preprints-data/raw/master/data/97962/v1/97962-v1.pdf)
+
 ## Examples - walking, sitting, standing, running
 <img src="https://github.com/MitchFuchs/asbar/assets/73831423/a95128ca-41c5-40c2-99bb-0eaaf04b0b5f.type" width="400" height="200">
 <img src="https://github.com/MitchFuchs/asbar/assets/73831423/10316b38-0796-4c55-ab57-e0ff6bcfebb3.type" width="400" height="200">
@@ -146,18 +173,9 @@ Follow the same structure as below:
 
 If you use this material, please cite it as below.
 
-Michael Fuchs, Emilie Genty, Klaus Zuberbühler, Paul Cotofrei. “ASBAR: an Animal Skeleton-Based Action Recognition framework. Recognizing great ape behaviors in the wild using pose estimation with domain adaptation”. In: bioRxiv (2023). doi: 10.1101/2023.09.24.559236. eprint: https://www.biorxiv.org/content/early/2023/09/25/2023.09.24.559236.full.pdf. 
+Michael Fuchs, Emilie Genty, Klaus Zuberbühler, Paul Cotofrei (2024) ASBAR: an Animal Skeleton-Based Action Recognition framework. Recognizing great ape behaviors in the wild using pose estimation with domain adaptation. eLife13:RP97962
+https://doi.org/10.7554/eLife.97962.1
 
 ```BibTeX
-@article {asbar_Fuchs2023,
-	author = {Michael Fuchs and Emilie Genty and Klaus Zuberb{\"u}hler and Paul Cotofrei},
-	title = {ASBAR: an Animal Skeleton-Based Action Recognition framework. Recognizing great ape behaviors in the wild using pose estimation with domain adaptation},
-	elocation-id = {2023.09.24.559236},
-	year = {2023},
-	doi = {10.1101/2023.09.24.559236},
-	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/early/2023/09/25/2023.09.24.559236},
-	eprint = {https://www.biorxiv.org/content/early/2023/09/25/2023.09.24.559236.full.pdf},
-	journal = {bioRxiv}
-}
+ @article{Fuchs_2024, title={ASBAR: an Animal Skeleton-Based Action Recognition framework. Recognizing great ape behaviors in the wild using pose estimation with domain adaptation}, url={http://dx.doi.org/10.7554/eLife.97962.1}, DOI={10.7554/elife.97962.1}, publisher={eLife Sciences Publications, Ltd}, author={Fuchs, Michael and Genty, Emilie and Zuberbühler, Klaus and Cotofrei, Paul}, year={2024}, month=aug }
 ```
